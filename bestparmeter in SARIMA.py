@@ -22,7 +22,7 @@ for param in pdq:
             continue #計算をtryしてできない場合はcontinue(skip)する -> エラーが発生した場合はスキップ
 
 # 最適なモデルのパラメータとAICを表示
-print('AIC min model：', best_result)
+print('AIC min model：', best_result) #printで状況がわかる
 
 # このコードは、SARIMAモデルのパラメータ選択を行うための反復処理を行っています。SARIMAモデルは季節性を考慮した時系列データの予測に使用されます。以下はこのコードの詳細な説明です。
 # warnings.filterwarnings("ignore") ラインは、ワーニングメッセージを表示しないようにするためのものです。特に、ゼロで割るなどのエラーが発生する可能性がある場合、ワーニングメッセージが多くなるため、これを無視する設定が行われています。
