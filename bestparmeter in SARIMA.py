@@ -8,7 +8,8 @@ for param in pdq:
     for param_seasonal in seasonal_pdq:
         try:
             # SARIMAモデルの構築とフィット
-            mod = SARIMAX(y, order = param, seasonal_order = param_seasonal)
+            mod = SARIMAX(y, order = param, seasonal_order = param_seasonal) #SARIMAXであればXを追加する必要があるが、今回はSARIMAなため不要
+            # mod = SARIMAX(y, X, order = param, seasonal_order = param_seasonal) #SARIMAX ver
             results = mod.fit()
             print('ARIMA parameter{}, Seasonal variation parameters{} - AIC: {}'.format(param, param_seasonal, results.aic))
             
