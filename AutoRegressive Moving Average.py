@@ -24,6 +24,9 @@ for i in range(2, n):
 df = pd.DataFrame({'Data': data})
 
 # ARMAモデルのフィッティング
+# エラーメッセージから statsmodels.tsa.api モジュールに ARMA クラスが存在しないことがわかります。実際には、statsmodels ライブラリは以前のバージョンからモデルの構築方法が変更されています。
+# 新しいバージョンの statsmodels では、ARMA モデルは ARIMA モデルを使って構築されるようになりました。
+# このコードでは、ARIMA モデルを使って ARMA(2, 1) モデルを構築しています。ARIMA モデルの order パラメータで p=2（AR次数）、d=0（差分次数）、q=1（MA次数）を指定しています。
 model = sm.tsa.ARIMA(df['Data'], order=(2, 0, 1))
 result = model.fit()
 
