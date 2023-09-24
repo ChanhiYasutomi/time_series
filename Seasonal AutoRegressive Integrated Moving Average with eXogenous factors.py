@@ -26,7 +26,7 @@ df = pd.DataFrame({'Data': data, 'ExogenousFactor': exogenous_factor})
 # SARIMAXモデルのフィッティング
 model = sm.tsa.SARIMAX(df['Data'], exog=df['ExogenousFactor'], order=(1, 1, 1), seasonal_order=(1, 1, 1, 12))
 result = model.fit()
-ここで、(1, 1, 1) はARIMAモデルの次数を指定し、(1, 1, 1, 12) は季節性の次数を指定します。また、exog パラメータに外部要因のデータを指定しています。
+# ここで、(1, 1, 1) はARIMAモデルの次数を指定し、(1, 1, 1, 12) は季節性の次数を指定します。また、exog パラメータに外部要因のデータを指定しています。
 
 # 最後に、データとモデルの適合結果をプロットして表示します。
 # プロット
